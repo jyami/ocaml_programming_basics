@@ -18,7 +18,9 @@ let ekimei_list = [
 ]
 
 let test0 = shokika [] "代々木公園" = []
-let test1 = shokika (makei_eki_list ekimei_list) "代々木公園" = [ 
+let test1 = shokika (make_eki_list ekimei_list) "代々木公園" = [ 
 {namae="代々木上原"; saitan_kyori=infinity; temae_list=[]}; 
 {namae="代々木公園"; saitan_kyori=0.; temae_list=["代々木公園"]}; 
 ]
+
+let test2 = shokika (make_eki_list global_ekimei_list) "代々木公園"
