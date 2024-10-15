@@ -1,10 +1,10 @@
 (* 目的:整数のリストを受け取ったらの偶数のみのリストを返す。 *)
 (* even : int list -> int list *)
-let rec even lst = match lst with
-  [] -> []
-  | first :: rest -> if is_even first then first::(even rest) else even rest
 
 let is_even t = (t mod 2) = 0
+
+let rec even lst = List.filter is_even lst
+
 
 let test1 = even [] = []
 let test2 = even [1] = []
