@@ -1,3 +1,5 @@
+#use "15-05_saitan_wo_bunri2.ml"
+
 type ekimei_t = { 
   kanji   : string; (* 駅名 *) 
   kana    : string; (* 読み *) 
@@ -26,7 +28,7 @@ let shokika2 lst kitenmei = List.map (fun e -> match e with
     if namae = kitenmei then {namae=namae; saitan_kyori=0.; temae_list=[namae]}
     else e) lst
 
-
+(*
 let saitan_wo_bunri2 lst = match lst with
   [] -> ({namae = "dummy"; saitan_kyori = infinity; temae_list = []}, [])
   | first :: rest -> List.fold_right
@@ -35,7 +37,7 @@ let saitan_wo_bunri2 lst = match lst with
       then (target, result :: others)
       else (result, target :: others)
     ) rest (first, [])
-
+*)
 let rec get_ekikan_kyori ekimei1 ekimei2 lst = match lst with
   [] -> infinity
   | first :: rest -> match first with
